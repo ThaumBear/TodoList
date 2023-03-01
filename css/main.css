@@ -1,0 +1,246 @@
+/* стилізація базової складової сторінки */
+body {
+    background-color: lightcyan;
+    font-family: "Calibri", sans-serif;
+    font-size: 2vw;
+}
+
+/* стилізація "важливої" задачі */
+.important {
+    font-weight: bold;
+    color: red;
+}
+
+/* стилізація виконаної задачі */
+.task-title--done {
+    text-decoration: line-through;
+    color: lightgrey;
+}
+
+/* ігнорування зображення при натисненні на кнопку видалення */
+#delete-button img {
+    pointer-events: none;
+}
+
+/* стилізація логотипу*/
+.logo {
+    position: fixed;
+    height: 5vw;
+    width: 5vw;
+    margin-right: 13vw;
+}
+
+/* стилізація блоку із лого та заголовком */
+.main {
+    margin-right: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* фіксування лого, полоси вводу та кнопки додавання */
+header, footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 15%;
+    width: 100%;
+    text-align: center;
+    border: darkblue;
+    background-color: darkcyan;
+    overflow: hidden;
+    -webkit-box-shadow: 0 2px;
+    box-shadow: 0 2px 10px 0 black;
+}
+header {
+    top: 0;
+}
+footer {
+    bottom: 0;
+}
+
+/* стилізація блоку списку */
+.todo_list {
+    width: 90%;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 100px auto 40px;
+    background-color: cadetblue;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 2px;
+    box-shadow: 0 2px 10px 0 black;
+}
+
+/* стилізація блоку списку */
+.progress_bar {
+    position: fixed;
+    color: white;
+    text-shadow: 0 3px 3px black;
+    right: 10vw;
+}
+
+/* стилізація заголовку та тексту прогресу */
+h1 {
+    font-size: 2vw;
+    position: fixed;
+    color: white;
+    text-shadow: 0 3px 3px black;
+    padding: 5px;
+}
+
+/* стилізація поля вводу */
+input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+}
+
+/* стилізація пунктів та "флагів" */
+input[type=checkbox], label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+label {
+    color: darkgray;
+    transition: color 1s;
+}
+
+/* стилізація пункту при наведенні */
+label:hover {
+    color: black;
+}
+
+#todo_item {
+    border-bottom: 1px solid black;
+}
+
+/* силізація власних флагів */
+input[type=checkbox] + label:before {
+    content: '';
+    background: white;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+    box-shadow: 0 1px 2px 0 black;
+    transition: background 1s, border-color 1s, box-shadow 1s;
+}
+
+/* стилізація флагів виконаних задач */
+input[type=checkbox]:checked + label:before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 5px;
+    background: white;
+    border: solid cadetblue;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    border-radius: 0;
+    margin: 0 15px 5px 5px;
+    box-shadow: 0 0 0;
+}
+
+/* стилізація кнопок видалення */
+#delete-button {
+    width: 18px;
+    height: 18px;
+    padding: 1px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    border: solid #ddd;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 black;
+    transition: background 1s, border-color 1s, box-shadow 1s;
+    animation: showBlock 1s linear forwards;
+}
+
+/* стилізація кнопки видалення та флагів по наведенню */
+#delete-button:hover, input[type=checkbox]:hover + label:before {
+    background: ghostwhite;
+    border-color: red;
+}
+
+/* стилізація кнопки видалення при наведенні */
+#delete-button:hover {
+    background: ghostwhite;
+    border-color: red;
+    box-shadow: 0 1px 2px 0 darkred;
+}
+
+/* стилізація відміченого флагу при наведенні */
+input[type=checkbox]:hover + label:before {
+    background: white;
+    border-color: lawngreen;
+}
+
+/* стилізація блоків вводу тексту та кнопки додавання */
+.message, .help, .add {
+    background-color: white;
+    border-color: #ddd;
+    -webkit-box-shadow: 0 2px;
+    box-shadow: 0 1px 4px 0 black;
+    animation: showBlock 1s linear forwards;
+}
+
+/* додаткова стилізація кнопки додавання */
+.add, .help {
+    width: 15vw;
+    height: 3vw;
+    cursor: pointer;
+    font-size: 1vw;
+    position: fixed;
+    border-radius: 1vw;
+}
+
+.add {
+    left: 77vw;
+    bottom: 2.5vw;
+}
+
+.help {
+    left: 5vw;
+   top: 2.5vw;
+}
+
+.message {
+    position: fixed;
+    width: 70vw;
+    height: 3vw;
+    font-size: 1vw;
+    left: 3vw;
+    bottom: 2vw;
+}
+
+/* стилізація кнопки додавання чи вводу по наведенню */
+.message:hover, .help:hover, .add:hover {
+    background-color: lightgrey;
+    transition: background 1s;
+}
+
+/* стилізація списку задач */
+.todo {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 2px;
+    box-shadow: 0 2px 10px 0 black;
+}
+
+/* стилізація списку */
+ul {
+    list-style-type: none;
+}

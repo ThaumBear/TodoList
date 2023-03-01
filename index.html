@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>ToDo List</title>
+</head>
+<body>
+<div class="container">
+    <header class="main">
+        <img class="logo" src="./img/logo.png">
+        <h1>ToDo list</h1>
+        <div class="progress_bar">
+        </div>
+        <div class="useful">
+            <button class="help" onclick="getHelp()">Get help</button>
+        </div>
+    </header>
+    <div class="todo_list">
+
+        <div class="wrapper" style="padding: 100px 0">
+            <ul class="todo"></ul>
+        </div>
+
+    </div>
+
+    <footer class="create_new_todo">
+        <input type="text" class="message" placeholder="Description">
+        <button class="add">Add new item</button>
+    </footer>
+</div>
+<script src="./js/main.js"></script>
+</body>
+</html>
